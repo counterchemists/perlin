@@ -42,6 +42,7 @@ var sketch = function(p) {
   var agentAlpha = 90;
   var strokeWidth = 0.3;
   var drawMode = 1;
+  var isAgentBlack = 0;
   var serial;
   var portName = '/dev/cu.wchusbserial1410';
   var inData = 0.0;
@@ -64,12 +65,13 @@ var sketch = function(p) {
   };
 
   p.draw = function() {
-    p.fill(255, overlayAlpha);
+    p.fill(255 * isAgentBlack, overlayAlpha);
     p.noStroke();
     p.rect(0, 0, p.width, p.height);
 
     // Draw agents
-    p.stroke(0, agentAlpha);
+    p.stroke(255 * (1 - isAgentBlack), agentAlpha);
+
     for (var i = 0; i < agentCount; i++) {
       if (drawMode == 1) {
         let angle = (inData * 360. / 255)*3.14159/180;
@@ -87,7 +89,9 @@ var sketch = function(p) {
       var newNoiseSeed = p.floor(p.random(10000));
       p.noiseSeed(newNoiseSeed);
     }
-    if (p.keyCode == p.DELETE || p.keyCode == p.BACKSPACE) p.background(255);
+    if (p.keyCode == p.DELETE || p.keyCode == p.BACKSPACE) {
+      isAgentBlack ^= 1; // toggle
+    }
   };
 };
 

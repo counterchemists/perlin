@@ -10,12 +10,22 @@ Our custom stretch sensor circuit sends output values through Arduino, via seria
 ![P5.serialcontrol flowchart](https://itp.nyu.edu/physcomp/wp-content/uploads/socket-serial-connection-1.png)
 
 Readers may create their own custom sensor circuit using suggestions documented here:
+
 https://www.kobakant.at/DIY/?p=6063
 
 ## Example
 This video shows a working example, using our custom stretch sensor:
 
 [![Perlin Visualization Example](https://counterchemists.github.io/files/perlin.gif)](https://www.youtube.com/watch?v=CJfnQpjb2bo)
+
+## Play
+
+To play with the demo, just go to this URL:
+
+https://counterchemists.github.io/perlin/
+
+Pressing backspace will toggle black/white, but there are other key controls hidden in the code ;)
+
 
 ## References
 ### Generative Gestaltung
