@@ -7,7 +7,7 @@ This repository contains code needed to receive analog input from a custom senso
 ## How?
 Our custom stretch sensor circuit sends output values through Arduino, via serial port, which is channeled through p5.serialcontrol.app [[2](#p5serial)] to a p5.js sketch. This is illustrated in the diagram below:
 
-![P5.serialcontrol flowchart](https://itp.nyu.edu/physcomp/wp-content/uploads/socket-serial-connection-1.png)
+![P5.serialcontrol flowchart](http://www.itpblogelizabethferguson.com/wp-content/uploads/2017/10/socket-serial-connection-1.png)
 
 Readers may create their own custom sensor circuit using suggestions documented here:
 
