@@ -49,7 +49,7 @@ var sketch = function(p) {
 
   p.setup = function() {
     p.fullscreen(true);
-    
+
     p.createCanvas(2000, 1200);
 
     for (var i = 0; i < agentCount; i++) {
@@ -72,9 +72,11 @@ var sketch = function(p) {
     // Draw agents
     p.stroke(255 * (1 - isAgentBlack), agentAlpha);
 
+    let angle = (inData * 360. / 255)*3.14159/180;
+    angle *= p.noise(p.frameCount/300); // add a touch of randomness
+
     for (var i = 0; i < agentCount; i++) {
       if (drawMode == 1) {
-        let angle = (inData * 360. / 255)*3.14159/180;
         agents[i].update1(noiseScale, noiseStrength, strokeWidth, angle);
       } else
         agents[i].update2(noiseScale, noiseStrength, strokeWidth);
